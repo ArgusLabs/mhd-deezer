@@ -21,7 +21,8 @@ div.music {
 	float:right;
 	width:480px;
 	height: 420px;
-	overflow: auto;
+	overflow-x: hidden;
+	overflow-x: auto;
 }
 
 
@@ -75,13 +76,7 @@ div.progress {
 	background:url(buttons/ic_ma_next_white_onclick.png) no-repeat;
 }
 
-/* playlist styling */
-
-table {
-}
-
-td {
-}
+/* now playing styling */
 
 #nowplayingcontainer {
 	margin-top:10px;
@@ -109,6 +104,45 @@ td {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	font-size: 24px;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+}
+
+/* playlist styling */
+
+ul {
+	list-style-type: none;
+	padding-left:0px;
+}
+
+li {
+}
+
+#li {
+	margin-top:10px;
+	background-color:green;
+	padding: 0px;
+	padding-left: 5px;
+	background-clip:padding-box;
+}
+
+#nowplaying {
+	background-color:white;
+	padding-left:10px;
+}
+
+li .artist {
+	font-size:100%;
+	font-weight: bold;
+	text-transform:uppercase;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+}
+
+li .title {
+	font-size:120%;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
 	white-space: nowrap;
 	text-overflow:ellipsis;
 }
