@@ -34,56 +34,67 @@
 		</div>
 
 		<div class="content">
-			<div class="moodgrid">
-				<div class="logo">
-					<img src="moodji.png" />
-					<p>by Argus</p>
-				</div>
-				<div class="moodgriditem" class="row-1 column-1" id="angry">
-					<img src="xxhdpi/ic_moodicon_angry.png" />
-				</div>
-				<div class="moodgriditem" class="row-1 column-2" id="active">
-					<img src="xxhdpi/ic_moodicon_active.png" />
-				</div>
-				<div class="moodgriditem" class="row-1 column-3" id="happy">
-					<img src="xxhdpi/ic_moodicon_happy.png" />
-				</div>
-				<div class="moodgriditem" class="row-2 column-1" id="upset">
-					<img src="xxhdpi/ic_moodicon_upset.png" />
-				</div>
-				<div class="moodgriditem" class="row-2 column-2" id="neutral">
-					<img src="xxhdpi/ic_moodicon_neutral.png" />
-				</div>
-				<div class="moodgriditem" class="row-2 column-3" id="calm">
-					<img src="xxhdpi/ic_moodicon_calm.png" />
-				</div>
-				<div class="moodgriditem" class="row-3 column-1" id="sad">
-					<img src="xxhdpi/ic_moodicon_sad.png" />
-				</div>
-				<div class="moodgriditem" class="row-3 column-2" id="quiet">
-					<img src="xxhdpi/ic_moodicon_quiet.png" />
-				</div>
-				<div class="moodgriditem" class="row-3 column-3" id="relaxed">
-					<img src="xxhdpi/ic_moodicon_relaxed.png" />
-				</div>
-			</div>
+			<table>
+				<tr>
+					<td>
+						<div class="logo">
+							<img src="moodji.png" />
+							<p>by Argus</p>
+						</div>
+					</td>
+					<td>
+						Now playing: 
+						<div id="nowplaying">
+							<div id="artist">
+							</div>
+							<div id="track">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="moodgrid">
+							<div class="moodgriditem" class="row-1 column-1" id="angry">
+								<img src="xxhdpi/ic_moodicon_angry.png" />
+							</div>
+							<div class="moodgriditem" class="row-1 column-2" id="active">
+								<img src="xxhdpi/ic_moodicon_active.png" />
+							</div>
+							<div class="moodgriditem" class="row-1 column-3" id="happy">
+								<img src="xxhdpi/ic_moodicon_happy.png" />
+							</div>
+							<div class="moodgriditem" class="row-2 column-1" id="upset">
+								<img src="xxhdpi/ic_moodicon_upset.png" />
+							</div>
+							<div class="moodgriditem" class="row-2 column-2" id="neutral">
+								<img src="xxhdpi/ic_moodicon_neutral.png" />
+							</div>
+							<div class="moodgriditem" class="row-2 column-3" id="calm">
+								<img src="xxhdpi/ic_moodicon_calm.png" />
+							</div>
+							<div class="moodgriditem" class="row-3 column-1" id="sad">
+								<img src="xxhdpi/ic_moodicon_sad.png" />
+							</div>
+							<div class="moodgriditem" class="row-3 column-2" id="quiet">
+								<img src="xxhdpi/ic_moodicon_quiet.png" />
+							</div>
+							<div class="moodgriditem" class="row-3 column-3" id="relaxed">
+								<img src="xxhdpi/ic_moodicon_relaxed.png" />
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="music">
+							<ul id="playlist">
+							</ul>
 
-			<div class="music"> 
-				Now playing: 
-				<div id="nowplaying">
-					<div id="artist">
-					</div>
-					<div id="track">
-					</div>
-				</div>
-				
-				<ul id="playlist">
-				</ul>
-
-				event_listener (for debugging purposes): <br/>
-				<pre id="event_listener" style="height:100px;overflow:auto;"></pre>
-			</div>
-
+							event_listener (for debugging purposes): <br/>
+							<pre id="event_listener" style="height:100px;overflow:auto;"></pre>
+						</div>
+					</td>
+				</tr>
+			</table>
 			<div class="moodstatus" style="clear:both">
 				<p>Your current mood is <span class="argusmood">AM</span>.</p>
 			</div>
