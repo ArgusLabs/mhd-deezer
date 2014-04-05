@@ -14,6 +14,21 @@
 	<link rel="stylesheet" type="text/css" href="player.css">
 </head>
 	<body>
+		
+		<div class="header">
+			<div id="controlers">
+				<input type="button" onclick="reloadPlayer(); return false;" value="Reload mood analysis"/>
+				<input type="button" onclick="DZ.player.play(); return false;" value="play"/>
+				<input type="button" onclick="DZ.player.pause(); return false;" value="pause"/>
+				<input type="button" onclick="playNextTrack(); return false;" value="next"/>
+				<div id="dz-root"></div>
+				<center>
+				<div id="slider_seek" class="progressbarplay" style="width:50%;">
+					<div class="bar" style="width: 0%;"></div>
+				</div>
+			</center>
+			</div>
+		</div>
 
 		<div class="content">
 			<div class="moodgrid">
@@ -54,23 +69,7 @@
 					<div id="track">
 					</div>
 				</div>
-
-				<div id="dz-root"></div>
-				<div id="controlers">
-					<input type="button" onclick="reloadPlayer(); return false;" value="Reload mood analysis"/>
-					<br/>
-					<input type="button" onclick="DZ.player.play(); return false;" value="play"/>
-					<input type="button" onclick="DZ.player.pause(); return false;" value="pause"/>
-					<input type="button" onclick="playNextTrack(); return false;" value="next"/>
-					<br/>
-					<input type="button" onclick="DZ.player.setVolume(20); return false;" value="set Volume 20"/>
-					<input type="button" onclick="DZ.player.setVolume(80); return false;" value="set Volume 80"/>
-					<br/><br/><br/>
-				</div>
-				<div id="slider_seek" class="progressbarplay" style="">
-					<div class="bar" style="width: 0%;"></div>
-				</div>
-
+				
 				<ul id="playlist">
 				</ul>
 
