@@ -21,7 +21,7 @@ function event_listener_append() {
 	}
 	pre.innerHTML += line.join(' ') + "\n";
 }
-
+var playerLoaded = false;
 function onPlayerLoaded() {
 	$("#controlers input").attr('disabled', false);
 	event_listener_append('player_loaded');
@@ -37,6 +37,7 @@ function onPlayerLoaded() {
 		event_listener_append('track_end');
 		playNextTrack();
 	});
+	playerLoaded = true;
 }
 
 DZ.init({

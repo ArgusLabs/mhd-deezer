@@ -1,4 +1,5 @@
 var playlist = new Array();
+var hasPlayed = false;
 
 // get the first track in the playlist and pop it
 function popTrack() {
@@ -34,6 +35,10 @@ function queuePlaylist(idlist){
 	    data: null,
 	    success: function( data ) { 
 			playlist.push( data )
+			if(!hasPlayed && playerLoaded){
+				hasPlayed = true
+				playNextTrack()
+			}
 			if(idlist.length > 1){
 				queuePlaylist(idlist.slice(1))
 				renderPlaylist();
