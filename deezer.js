@@ -53,6 +53,6 @@ function playNextTrack() {
 	nextTrack = popTrack();
 	element = $( "#nowplaying" );
 	console.log(element.html());
-	element.html( '<div id="artist">' + nextTrack[ "artist" ][ "name" ] + '</div><div id="track">' + nextTrack[ "title" ] + '</div>' );
+	element.html( '<div id="track">' + nextTrack[ "title" ] + '</div><div id="artist">' + nextTrack[ "artist" ][ "name" ] + '</div>' );
 	DZ.player.playTracks( [ nextTrack[ "id" ] ] );
 }

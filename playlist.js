@@ -34,6 +34,6 @@ function renderPlaylist() {
 	playlistElement = $( "#playlist" );
 	playlistElement.empty();
 	for (var i = 0; i < playlist.length; i++) {
-		playlistElement.append('<li><div class="artist">' + playlist[ i ][ "artist" ][ "name" ] + '</div><div class="title">' + playlist[ i ][ "title" ] + '</div></li>');
+		playlistElement.append('<li><div class="title">' + playlist[ i ][ "title" ] + '</div><div class="artist">' + playlist[ i ][ "artist" ][ "name" ] + '</div></li>');
 	}
 }
