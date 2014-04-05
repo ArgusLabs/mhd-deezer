@@ -1,12 +1,14 @@
 div.credits {
-	padding: 10px; 
+	padding: 10px;
 	text-align:left;
+	margin-bottom: 100px;
 }
 
 div.credits p {
 	border:0;
 	margin:0;
 	padding:0;
+	padding-left: 5px;
 }
 
 div.aftiteling {
@@ -23,6 +25,11 @@ div.aftiteling {
 .companyname {
 	font-weight: 300;
 	font-size: 18px;
+}
+
+.companylogo {
+	width: 50%;
+	height: 50%;
 }
 
 .jobdescription {
