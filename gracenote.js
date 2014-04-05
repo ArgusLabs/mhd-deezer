@@ -10,21 +10,25 @@ function getGraceNoteTracks (graceNoteMoodId) {
 		deezid = album['TRACK'][0]['XID'][0]['VALUE']
 		return 	deezid;
 	}
-	var moodparam = "?mood_code="
-	var idString = graceNoteMoodId.toString()
-	var tempurl = "http://mhdapi-640468004.eu-west-1.elb.amazonaws.com/users/123/playlist"
+	var moodparam = "?seed=mood_" + graceNoteMoodId.toString()
+	var fixedparams = "&client=14035968-3A7531B15EDA931973B63304828033EE&user=262144737596677836-7E07E310AB2C52F7872B8F77488F853F&select_extended=link&return_count=25"
+	moodparam = moodparam.concat(fixedparams)
+
+	var tempurl = "https://c14035968.web.cddbp.net/webapi/json/1.0/radio/create"
 	
-	moodparam = moodparam.concat(idString)
-	moodparam = moodparam.concat("return_count=25")
 	tempurl = tempurl.concat(moodparam)
 
      jQuery.ajax({
          type: "GET",
-         url: tempurl,
+         url: "http://mhdapi-640468004.eu-west-1.elb.amazonaws.com/gracenote_cors_proxy?url=" + encodeURIComponent(tempurl),
          contentType: "application/json; charset=utf-8",
          dataType: "json",
          success: function (data) {
          	var albumlist =data['RESPONSE'][0].ALBUM
+         	if(albumlist == undefined){
+         		console.log("No album data from gracenote")
+         		return;
+         	}
          	var deezidlist = new Array();
          	var tmpid = 0;
          	for(var i = 0;i<albumlist.length;i++){
@@ -33,12 +37,7 @@ function getGraceNoteTracks (graceNoteMoodId) {
 						queueTrackById(tmpid);
 					}
 				
-         		//deezidlist.push(fetchDeezerID(albumlist[i]))
          	}
-         	//return(deezidlist)
-             // do something
-             //alert(data.length)
-             //alert(data.response[0].status)
 
          },
 
