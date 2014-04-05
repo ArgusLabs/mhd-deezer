@@ -10,6 +10,8 @@ function reloadPlayer() {
 	
 	// play tracks with deezer player
 	
-	DZ.player.playTracks( tracks ); return false;
+	for (var i = 0; i < tracks.length; i++) {
+		queueTrackById( tracks[ i ] );
+	}
 
 }
