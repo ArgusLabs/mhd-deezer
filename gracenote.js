@@ -21,9 +21,12 @@ function getGraceNoteTracks (graceNoteMoodId) {
          	var albumlist =data['RESPONSE'][0].ALBUM
          	var deezidlist = new Array();
          	for(var i = 0;i<albumlist.length;i++){
-         		deezidlist.push(fetchDeezerID(albumlist[i]))
+
+					queueTrackById(fetchDeezerID(albumlist[i]));
+				
+         		//deezidlist.push(fetchDeezerID(albumlist[i]))
          	}
-         	return(deezidlist)
+         	//return(deezidlist)
              // do something
              //alert(data.length)
              //alert(data.response[0].status)

@@ -11,7 +11,7 @@ function getSentiment(callback) {
 			}
 			console.log(data);
 			if(callback != undefined && typeof callback == 'function') {
-				callback(data);
+				callback(data['current_mood_code']);
 			}
 		}
 	});
