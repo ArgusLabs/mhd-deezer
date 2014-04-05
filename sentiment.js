@@ -1,8 +1,10 @@
+var currentMoodCode
+
 function getSentiment(callback) {
 	
 	var currentMoodParams;
-	if (currentMood) {
-		currentMoodParams = '?current_mood=' + currentMood;
+	if (currentMoodCode) {
+		currentMoodParams = '?current_mood=' + currentMoodCode;
 	} else {
 		currentMoodParams = '';
 	}
@@ -18,8 +20,9 @@ function getSentiment(callback) {
 
 			if(callback != undefined && typeof callback == 'function') {
 				//console.log(data['current_mood_code']);
-				currentMood = data['current_argus_mood']
-				console.log(currentMood)
+				currentMood = data['current_argus_mood'];
+				currentMoodCode = data['current_mood_code'];
+				console.log(currentMood);
 				callback(data['current_mood_code']);
 			}
 		}
