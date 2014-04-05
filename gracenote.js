@@ -29,15 +29,18 @@ function getGraceNoteTracks (graceNoteMoodId) {
          		console.log("No album data from gracenote")
          		return;
          	}
-         	var deezidlist = new Array();
+         	//var deezidlist = new Array();
          	var tmpid = 0;
+         	var allids = new Array();
          	for(var i = 0;i<albumlist.length;i++){
 					tmpid = fetchDeezerID(albumlist[i])
 					if(tmpid != 0){
-						queueTrackById(tmpid);
+						allids.push(tmpid)
+						//queueTrackById(tmpid);
 					}
-				
          	}
+            queuePlaylist(allids)
+  	
 
          },
 
