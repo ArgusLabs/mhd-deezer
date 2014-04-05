@@ -29,6 +29,7 @@ div.music {
 div.header {
 	background-color: #32323a;
 	padding: 20px;
+	margin-bottom:20px;
 }
 
 div.progress {
@@ -36,3 +37,39 @@ div.progress {
     margin: 0 auto;
 	padding-top:10px;
 }
+
+
+/* buttons */
+
+.button {
+	cursor:pointer;
+	border:none;
+	outline:none;
+	width:50px;
+	height:50px;
+}
+
+#playButton {
+	background:url(buttons/ic_ma_play_white.png) no-repeat; 
+}
+
+#playButton:active {
+	background:url(buttons/ic_ma_play_white_onclick.png) no-repeat;
+}
+
+#pauseButton {
+	background:url(buttons/ic_ma_pause_white.png) no-repeat; 
+}
+
+#pauseButton:active {
+	background:url(buttons/ic_ma_pause_white_onclick.png) no-repeat;
+}
+
+#nextButton {
+	background:url(buttons/ic_ma_next_white.png) no-repeat; 
+}
+
+#nextButton:active {
+	background:url(buttons/ic_ma_next_white_onclick.png) no-repeat;
+}
+
