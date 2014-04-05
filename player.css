@@ -6,7 +6,7 @@
 }
 
 body {
-	margin:50px 0px;
+	margin:0px 0px;
 	padding:0px;
 	text-align:center;
 }
@@ -23,3 +23,17 @@ div.music {
 	height: 420px;
 	overflow: auto;
 }
+
+
+div.header {
+	background-color: #444;
+	padding: 20px;
+	margin-bottom:100px;
+}
+
+div.progress {
+    width: 50%;
+    margin: 0 auto;
+	padding-top:10px;
+}
+
