@@ -1,0 +1,39 @@
+div.credits {
+	padding: 10px; 
+	text-align:left;
+}
+
+div.credits p {
+	border:0;
+	margin:0;
+	padding:0;
+}
+
+div.aftiteling {
+    width:60%;
+    margin-left:20%;
+    margin-right:20%;
+}
+
+.creditee {
+    width:30%;
+    float:left;
+}
+
+.companyname {
+	font-weight: 300;
+	font-size: 18px;
+}
+
+.jobdescription {
+	font-weight: 900;
+	font-size: 12px;
+}
+
+.sectiontitle {
+	font-weight: 900;
+	font-size: 12px;
+	border-bottom:solid 1px;
+	padding:10px;
+	margin:10px;
+}

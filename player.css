@@ -9,6 +9,7 @@ body {
 	margin:0px 0px;
 	padding:0px;
 	text-align:center;
+	font-family: 'Roboto', sans-serif;
 }
 
 div.content {
@@ -36,4 +37,3 @@ div.progress {
     margin: 0 auto;
 	padding-top:10px;
 }
-
