@@ -30,9 +30,3 @@ function switchMood(mood) {
 	currentMood = mood;
 	internalCurrentMood = mood;
 };
-
-function moodgridInit() {
-	$('.moodgriditem').click(function() {
-		switchMood(this.id);
-	});
-}
