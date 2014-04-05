@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="integration.js"></script>
 	<script type="text/javascript" src="gracenote.js"></script>
 	<script type="text/javascript" src="sentiment.js"></script>
+	<script type="text/javascript" src="playlist.js"></script>
 	
 	<style type="text/css">
 			.progressbarplay {
@@ -19,6 +20,7 @@
 		</style>
 	</head>
 	<body>
+
 	<div id="dz-root"></div>
 	<div id="controlers">
 		<input type="button" onclick="reloadPlayer(); return false;" value="Reload mood analysis"/>
@@ -35,8 +37,13 @@
 	<div id="slider_seek" class="progressbarplay" style="">
 	  <div class="bar" style="width: 0%;"></div>
 	</div>
-	event_listener : <br/>
+	
+	<ul id="playlist">
+	</ul>
+	
+	event_listener (for debugging purposes): <br/>
 	<pre id="event_listener" style="height:100px;overflow:auto;"></pre>
+
 	<script type="text/javascript" src="deezer.js"></script>
 </body>
 </html>

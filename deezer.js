@@ -5,7 +5,16 @@ $(document).ready(function(){
 		console.log(evt.offsetX, $(this).width(), evt.offsetX/$(this).width());
 		DZ.player.seek((evt.offsetX/$(this).width()) * 100);
 	});
+	
+	// add some dummy values in the playlist
+	queueTrack( 60978718 );
+	queueTrack( 60978718 );
+	queueTrack( 60978718 );
+	renderPlaylist();
+	
 });
+
+
 function event_listener_append() {
 	var pre = document.getElementById('event_listener');
 	var line = [];
@@ -14,6 +23,7 @@ function event_listener_append() {
 	}
 	pre.innerHTML += line.join(' ') + "\n";
 }
+
 function onPlayerLoaded() {
 	$("#controlers input").attr('disabled', false);
 	event_listener_append('player_loaded');
@@ -29,6 +39,7 @@ function onPlayerLoaded() {
 		event_listener_append('track_end');
 	});
 }
+
 DZ.init({
 	appId  : '135161',
 	channelUrl : 'http://developers.deezer.com/examples/channel.php',
