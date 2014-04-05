@@ -9,7 +9,7 @@ function getSentiment(callback) {
 			if(data == undefined) {
 				console.log("Data is null!!");
 			}
-			console.log(data);
+
 			if(callback != undefined && typeof callback == 'function') {
 				callback(data['current_mood_code']);
 			}
