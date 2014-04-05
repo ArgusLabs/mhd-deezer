@@ -16,6 +16,8 @@ function reloadPlayer() {
 	// get gracenote tracks
 	
 	// play tracks with deezer player
+	
+	DZ.player.playTracks([60978718,18232696,60978718]); return false;
 
 	alert("done");
 
