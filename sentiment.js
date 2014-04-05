@@ -11,7 +11,8 @@ function getSentiment(callback) {
 			}
 
 			if(callback != undefined && typeof callback == 'function') {
-				console.log(data['current_mood_code']);
+				//console.log(data['current_mood_code']);
+				currentMood = data['current_argus_mood']
 				callback(data['current_mood_code']);
 			}
 		}
