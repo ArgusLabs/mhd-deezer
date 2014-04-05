@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
 
 	<script type="text/javascript" src="deezer_api.js"></script>
 	<script type="text/javascript" src="integration.js"></script>
@@ -17,9 +17,112 @@
 			.progressbarplay .bar {
 				cursor:pointer;background: #4496C6;width: 0;height: 8px;color: white;font-size: 12px;text-align: center;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);-moz-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;-webkit-transition: width .6s ease;-moz-transition: width .6s ease;-ms-transition: width .6s ease;-o-transition: width .6s ease;transition: width .6s ease;
 			}
+
+			div.moodgrid {
+				max-width:600px;
+				width:480px;
+			}
+
+			.moodgriditem {
+				width:20%;
+				float:left;
+				margin:2%;
+				padding:2%;
+			}
+
+			.moodgriditem.angry {
+				background-color:#f15b29;
+			}
+
+			.moodgriditem.active {
+				background-color:#f69534;
+			}
+
+			.moodgriditem.happy {
+				background-color:#fbd240;
+			}
+
+			.moodgriditem.calm {
+				background-color:#c4cc3f;
+			}
+
+			.moodgriditem.relaxed {
+				background-color:#8dc63f;
+			}
+
+			.moodgriditem.quiet {
+				background-color:#539d7f;
+			}
+
+			.moodgriditem.sad {
+				background-color:#1c75bc;
+			}
+
+			.moodgriditem.upset {
+				background-color:#b07678;
+			}
+
+			.moodgriditem.neutral {
+				background-color:#c0c0c0;
+			}
+
+			.moodgriditem img {
+				width:100%;
+				height:auto;
+			}
+
+			#neutral {
+				opacity:0.5;
+			}
+
+			.moodstatus {
+				font-family: 'Roboto', sans-serif;
+				font-weight: 300;
+				font-size: 24px;
+				clear:both;
+				width:100%;
+			}
+
+			.moodstatus p {
+				text-align: center;
+			}
+
+			.argusmood {
+				font-weight: 900;
+			}
 		</style>
 	</head>
 	<body>
+
+	<div class="moodgrid">
+		<div class="moodgriditem" class="row-1 column-1" id="angry">
+			<img src="xxhdpi/ic_moodicon_angry.png" />
+		</div>
+		<div class="moodgriditem" class="row-1 column-2" id="active">
+			<img src="xxhdpi/ic_moodicon_active.png" />
+		</div>
+		<div class="moodgriditem" class="row-1 column-3" id="happy">
+			<img src="xxhdpi/ic_moodicon_happy.png" />
+		</div>
+		<div class="moodgriditem" class="row-2 column-1" id="upset">
+			<img src="xxhdpi/ic_moodicon_upset.png" />
+		</div>
+		<div class="moodgriditem" class="row-2 column-2" id="neutral">
+			<img src="xxhdpi/ic_moodicon_neutral.png" />
+		</div>
+		<div class="moodgriditem" class="row-2 column-3" id="calm">
+			<img src="xxhdpi/ic_moodicon_calm.png" />
+		</div>
+		<div class="moodgriditem" class="row-3 column-1" id="sad">
+			<img src="xxhdpi/ic_moodicon_sad.png" />
+		</div>
+		<div class="moodgriditem" class="row-3 column-2" id="quiet">
+			<img src="xxhdpi/ic_moodicon_quiet.png" />
+		</div>
+		<div class="moodgriditem" class="row-3 column-3" id="relaxed">
+			<img src="xxhdpi/ic_moodicon_relaxed.png" />
+		</div>
+	</div>
 		
 	Now playing: 
 	<div id="nowplaying">
@@ -53,6 +156,17 @@
 	event_listener (for debugging purposes): <br/>
 	<pre id="event_listener" style="height:100px;overflow:auto;"></pre>
 
+
+	<div class="moodstatus" style="clear:both">
+		<p>Your current mood is <span class="argusmood">AM</span>.</p>
+	</div>
+
 	<script type="text/javascript" src="deezer.js"></script>
+	<script type="text/javascript" src="moodgrid.js"></script>
+	<script>
+	$(document).ready(function() {
+		moodgridInit();
+	});
+	</script>
 </body>
 </html>
