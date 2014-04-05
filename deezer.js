@@ -1,3 +1,5 @@
+// setup to work with deezer player
+
 $(document).ready(function(){
 	$("#controlers input").attr('disabled', true);
 	$("#slider_seek").click(function(evt,arg){
@@ -7,13 +9,14 @@ $(document).ready(function(){
 	});
 	
 	// add some dummy values in the playlist
-	queueTrack( 60978718 );
-	queueTrack( 60978718 );
-	queueTrack( 60978718 );
+	queueTrackById( 60978718 );
+	queueTrackById( 60978718 );
+	queueTrackById( 60978718 );
 	renderPlaylist();
 	
 });
 
+// event listener, for now we display it for debugging purposes
 
 function event_listener_append() {
 	var pre = document.getElementById('event_listener');
@@ -47,3 +50,10 @@ DZ.init({
 		onload : onPlayerLoaded
 	}
 });
+
+// our own functionality
+
+function playNextTrack() {
+	nextTrack = popTrack();
+	DZ.player.playTracks( [ nextTrack[ "id" ] ] );	
+}
