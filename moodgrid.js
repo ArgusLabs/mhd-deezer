@@ -1,14 +1,19 @@
 var currentMood;
 
+// More or less the same as currentMood, but this one is only meant for use internal to this class.
+// currentMood gets overwritten when the detected mood changes, and then we cant properly perform the
+// background color transitions.
+var internalCurrentMood;
+
 function switchMood(mood) {
-	if (mood == currentMood) {
+	if (mood == internalCurrentMood) {
 		return;
 	}
 
-	if (currentMood == null) {
+	if (internalCurrentMood == null) {
 		$('.moodgriditem').addClass(mood, 1000);
 	} else {
-		$('.moodgriditem').switchClass(currentMood, mood, 1000);
+		$('.moodgriditem').switchClass(internalCurrentMood, mood, 1000);
 	}
 
 	$('.moodgriditem').each(function() {
@@ -19,6 +24,7 @@ function switchMood(mood) {
 		};
 	});
 	currentMood = mood;
+	internalCurrentMood = mood;
 };
 
 function moodgridInit() {
