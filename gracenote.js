@@ -10,6 +10,7 @@ function getGraceNoteTracks (graceNoteMoodId) {
 	var tempurl = "http://mhdapi-640468004.eu-west-1.elb.amazonaws.com/users/123/playlist"
 	
 	moodparam = moodparam.concat(idString)
+	moodparam = moodparam.concat("return_count=25")
 	tempurl = tempurl.concat(moodparam)
 
      jQuery.ajax({
