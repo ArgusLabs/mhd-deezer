@@ -8,12 +8,7 @@ $(document).ready(function(){
 		DZ.player.seek((evt.offsetX/$(this).width()) * 100);
 	});
 	
-	// add some dummy values in the playlist
-	queueTrackById( 60978718 );
-	queueTrackById( 60978718 );
-	queueTrackById( 60978718 );
-	renderPlaylist();
-	
+	reloadPlayer();
 });
 
 // event listener, for now we display it for debugging purposes
@@ -40,6 +35,7 @@ function onPlayerLoaded() {
 
 	DZ.Event.subscribe('track_end', function() {
 		event_listener_append('track_end');
+		playNextTrack();
 	});
 }
 
