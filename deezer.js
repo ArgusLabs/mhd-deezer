@@ -11,7 +11,7 @@ function onPlayerLoaded() {
 }
 
 DZ.init({
-	appId  : '8',
+	appId  : '135161',
 	channelUrl : 'http://developers.deezer.com/examples/channel.php',
 	player : {
 		container : 'player',
