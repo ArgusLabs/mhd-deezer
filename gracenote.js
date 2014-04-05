@@ -3,7 +3,7 @@ function getGraceNoteTracks (graceNoteMoodId) {
 		var deezid = 0;
 
 		var xid = album['TRACK'][0]['XID']
-		if(typeof(xid) == undefined){
+		if(xid == undefined){
 			return 0;
 		}
 		
