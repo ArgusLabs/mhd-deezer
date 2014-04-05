@@ -9,5 +9,5 @@ function getGraceNoteTracks( graceNoteMoodId ) {
 	});
 	*/
 	
-	return 1;
+	return [60978718,18232696,60978718];
 }

@@ -6,10 +6,10 @@ function reloadPlayer() {
 	
 	// get gracenote tracks
 	
-	getGraceNoteTracks( graceNoteMoodId );
+	tracks = getGraceNoteTracks( graceNoteMoodId );
 	
 	// play tracks with deezer player
 	
-	DZ.player.playTracks([60978718,18232696,60978718]); return false;
+	DZ.player.playTracks( tracks ); return false;
 
 }
