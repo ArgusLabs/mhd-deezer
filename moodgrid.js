@@ -24,6 +24,9 @@ function switchMood(mood) {
 			$(this).find('img').fadeTo(1000, 0);
 		};
 	});
+
+	$('.argusmood').text(mood);
+
 	currentMood = mood;
 	internalCurrentMood = mood;
 };
