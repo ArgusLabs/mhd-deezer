@@ -5,9 +5,11 @@ $(document).ready(function(){
 		DZ.player.seek((evt.offsetX/$(this).width()) * 100);
 	});
 });
+
 function onPlayerLoaded() {
 	$("#controlers input").attr('disabled', false);
 }
+
 DZ.init({
 	appId  : '8',
 	channelUrl : 'http://developers.deezer.com/examples/channel.php',
