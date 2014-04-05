@@ -49,10 +49,17 @@ DZ.init({
 
 // our own functionality
 
+function limitString( str, len ) {
+	if( str.length > len )
+		return str.substring( 0, len ) + "...";
+	else
+		return str;
+}
+
 function playNextTrack() {
 	nextTrack = popTrack();
 	element = $( "#nowplaying" );
 	console.log(element.html());
-	element.html( '<div id="track">' + nextTrack[ "title" ] + '</div><div id="artist">' + nextTrack[ "artist" ][ "name" ] + '</div>' );
+	element.html( '<div id="track">' + limitString( nextTrack[ "title" ], 25 ) + '</div><div id="artist">' + limitString( nextTrack[ "artist" ][ "name" ], 25 ) + '</div>' );
 	DZ.player.playTracks( [ nextTrack[ "id" ] ] );
 }

@@ -19,7 +19,6 @@ div.content {
 }
 div.music {
 	float:right;
-	max-width:600px;
 	width:480px;
 	height: 420px;
 	overflow: auto;
@@ -78,7 +77,14 @@ div.progress {
 
 /* playlist styling */
 
+table {
+}
+
+td {
+}
+
 #nowplayingcontainer {
+	margin-top:10px;
 	background-color:green;
 	padding: 0px;
 	padding-left: 5px;
@@ -87,5 +93,22 @@ div.progress {
 
 #nowplaying {
 	background-color:white;
-	padding-left:5px;
+	padding-left:10px;
+}
+
+#nowplaying #artist {
+	font-size:120%;
+	font-weight: bold;
+	text-transform:uppercase;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+}
+
+#nowplaying #track {
+	font-size:150%;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 24px;
+	white-space: nowrap;
+	text-overflow:ellipsis;
 }
