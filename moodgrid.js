@@ -6,6 +6,7 @@ var currentMood;
 var internalCurrentMood;
 
 function switchMood(mood) {
+	mood = mood.toLowerCase();
 	if (mood == internalCurrentMood) {
 		return;
 	}
@@ -28,7 +29,6 @@ function switchMood(mood) {
 };
 
 function moodgridInit() {
-	switchMood("neutral", 1000);
 	$('.moodgriditem').click(function() {
 		switchMood(this.id);
 	});

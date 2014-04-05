@@ -38,7 +38,7 @@ div.moodgrid {
 	background-color:#fbd240;
 }
 
-.moodgriditem.calm {
+.moodgriditem.positive {
 	background-color:#c4cc3f;
 }
 
@@ -46,19 +46,19 @@ div.moodgrid {
 	background-color:#8dc63f;
 }
 
-.moodgriditem.quiet {
+.moodgriditem.passive {
 	background-color:#539d7f;
 }
 
-.moodgriditem.sad {
+.moodgriditem.depressed {
 	background-color:#1c75bc;
 }
 
-.moodgriditem.upset {
+.moodgriditem.negative {
 	background-color:#b07678;
 }
 
-.moodgriditem.neutral {
+.moodgriditem.unknown {
 	background-color:#c0c0c0;
 }
 
