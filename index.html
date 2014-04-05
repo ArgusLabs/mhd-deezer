@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="sentiment.js"></script>
 	<script type="text/javascript" src="playlist.js"></script>
 	
+	<link rel="stylesheet" type="text/css" href="moodgrid.css">
 	<style type="text/css">
 			.progressbarplay {
 				cursor:pointer;overflow: hidden;height: 8px;margin-bottom: 8px;background-color: #F7F7F7;background-image: -moz-linear-gradient(top,whiteSmoke,#F9F9F9);background-image: -ms-linear-gradient(top,whiteSmoke,#F9F9F9);background-image: -webkit-gradient(linear,0 0,0 100%,from(whiteSmoke),to(#F9F9F9));background-image: -webkit-linear-gradient(top,whiteSmoke,#F9F9F9);background-image: -o-linear-gradient(top,whiteSmoke,#F9F9F9);background-image: linear-gradient(top,whiteSmoke,#F9F9F9);background-repeat: repeat-x;filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5',endColorstr='#f9f9f9',GradientType=0);-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);-webkit-border-radius: 6px;-moz-border-radius: 6px;border-radius: 6px;
@@ -18,147 +19,95 @@
 				cursor:pointer;background: #4496C6;width: 0;height: 8px;color: white;font-size: 12px;text-align: center;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);-moz-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;-webkit-transition: width .6s ease;-moz-transition: width .6s ease;-ms-transition: width .6s ease;-o-transition: width .6s ease;transition: width .6s ease;
 			}
 
-			div.moodgrid {
+			body {
+				margin:50px 0px;
+				padding:0px;
+				text-align:center;
+			}
+
+			div.content {
+				margin:0px auto;
+				text-align:left;
+				padding:15px;display: inline-block
+			}
+			div.music {
+				float:right;
 				max-width:600px;
 				width:480px;
-			}
-
-			.moodgriditem {
-				width:20%;
-				float:left;
-				margin:2%;
-				padding:2%;
-			}
-
-			.moodgriditem.angry {
-				background-color:#f15b29;
-			}
-
-			.moodgriditem.active {
-				background-color:#f69534;
-			}
-
-			.moodgriditem.happy {
-				background-color:#fbd240;
-			}
-
-			.moodgriditem.calm {
-				background-color:#c4cc3f;
-			}
-
-			.moodgriditem.relaxed {
-				background-color:#8dc63f;
-			}
-
-			.moodgriditem.quiet {
-				background-color:#539d7f;
-			}
-
-			.moodgriditem.sad {
-				background-color:#1c75bc;
-			}
-
-			.moodgriditem.upset {
-				background-color:#b07678;
-			}
-
-			.moodgriditem.neutral {
-				background-color:#c0c0c0;
-			}
-
-			.moodgriditem img {
-				width:100%;
-				height:auto;
-			}
-
-			#neutral {
-				opacity:0.5;
-			}
-
-			.moodstatus {
-				font-family: 'Roboto', sans-serif;
-				font-weight: 300;
-				font-size: 24px;
-				clear:both;
-				width:100%;
-			}
-
-			.moodstatus p {
-				text-align: center;
-			}
-
-			.argusmood {
-				font-weight: 900;
 			}
 		</style>
 	</head>
 	<body>
 
-	<div class="moodgrid">
-		<div class="moodgriditem" class="row-1 column-1" id="angry">
-			<img src="xxhdpi/ic_moodicon_angry.png" />
-		</div>
-		<div class="moodgriditem" class="row-1 column-2" id="active">
-			<img src="xxhdpi/ic_moodicon_active.png" />
-		</div>
-		<div class="moodgriditem" class="row-1 column-3" id="happy">
-			<img src="xxhdpi/ic_moodicon_happy.png" />
-		</div>
-		<div class="moodgriditem" class="row-2 column-1" id="upset">
-			<img src="xxhdpi/ic_moodicon_upset.png" />
-		</div>
-		<div class="moodgriditem" class="row-2 column-2" id="neutral">
-			<img src="xxhdpi/ic_moodicon_neutral.png" />
-		</div>
-		<div class="moodgriditem" class="row-2 column-3" id="calm">
-			<img src="xxhdpi/ic_moodicon_calm.png" />
-		</div>
-		<div class="moodgriditem" class="row-3 column-1" id="sad">
-			<img src="xxhdpi/ic_moodicon_sad.png" />
-		</div>
-		<div class="moodgriditem" class="row-3 column-2" id="quiet">
-			<img src="xxhdpi/ic_moodicon_quiet.png" />
-		</div>
-		<div class="moodgriditem" class="row-3 column-3" id="relaxed">
-			<img src="xxhdpi/ic_moodicon_relaxed.png" />
-		</div>
-	</div>
-		
-	Now playing: 
-	<div id="nowplaying">
-		<div id="artist">
-			[artist name]
-		</div>
-		<div id="track">
-			[track name]
-		</div>
-	</div>
+		<div class="content">
+			<div class="moodgrid">
+				<div class="moodgriditem" class="row-1 column-1" id="angry">
+					<img src="xxhdpi/ic_moodicon_angry.png" />
+				</div>
+				<div class="moodgriditem" class="row-1 column-2" id="active">
+					<img src="xxhdpi/ic_moodicon_active.png" />
+				</div>
+				<div class="moodgriditem" class="row-1 column-3" id="happy">
+					<img src="xxhdpi/ic_moodicon_happy.png" />
+				</div>
+				<div class="moodgriditem" class="row-2 column-1" id="upset">
+					<img src="xxhdpi/ic_moodicon_upset.png" />
+				</div>
+				<div class="moodgriditem" class="row-2 column-2" id="neutral">
+					<img src="xxhdpi/ic_moodicon_neutral.png" />
+				</div>
+				<div class="moodgriditem" class="row-2 column-3" id="calm">
+					<img src="xxhdpi/ic_moodicon_calm.png" />
+				</div>
+				<div class="moodgriditem" class="row-3 column-1" id="sad">
+					<img src="xxhdpi/ic_moodicon_sad.png" />
+				</div>
+				<div class="moodgriditem" class="row-3 column-2" id="quiet">
+					<img src="xxhdpi/ic_moodicon_quiet.png" />
+				</div>
+				<div class="moodgriditem" class="row-3 column-3" id="relaxed">
+					<img src="xxhdpi/ic_moodicon_relaxed.png" />
+				</div>
+			</div>
 
-	<div id="dz-root"></div>
-	<div id="controlers">
-		<input type="button" onclick="reloadPlayer(); return false;" value="Reload mood analysis"/>
-		<br/>
-		<input type="button" onclick="DZ.player.play(); return false;" value="play"/>
-		<input type="button" onclick="DZ.player.pause(); return false;" value="pause"/>
-		<input type="button" onclick="playNextTrack(); return false;" value="next"/>
-		<br/>
-		<input type="button" onclick="DZ.player.setVolume(20); return false;" value="set Volume 20"/>
-		<input type="button" onclick="DZ.player.setVolume(80); return false;" value="set Volume 80"/>
-		<br/><br/><br/>
-	</div>
-	<div id="slider_seek" class="progressbarplay" style="">
-	  <div class="bar" style="width: 0%;"></div>
-	</div>
-	
-	<ul id="playlist">
-	</ul>
-	
-	event_listener (for debugging purposes): <br/>
-	<pre id="event_listener" style="height:100px;overflow:auto;"></pre>
+			<div class="music"> 
+				Now playing: 
+				<div id="nowplaying">
+					<div id="artist">
+						[artist name]
+					</div>
+					<div id="track">
+						[track name]
+					</div>
+				</div>
 
+				<div id="dz-root"></div>
+				<div id="controlers">
+					<input type="button" onclick="reloadPlayer(); return false;" value="Reload mood analysis"/>
+					<br/>
+					<input type="button" onclick="DZ.player.play(); return false;" value="play"/>
+					<input type="button" onclick="DZ.player.pause(); return false;" value="pause"/>
+					<input type="button" onclick="playNextTrack(); return false;" value="next"/>
+					<br/>
+					<input type="button" onclick="DZ.player.setVolume(20); return false;" value="set Volume 20"/>
+					<input type="button" onclick="DZ.player.setVolume(80); return false;" value="set Volume 80"/>
+					<br/><br/><br/>
+				</div>
+				<div id="slider_seek" class="progressbarplay" style="">
+					<div class="bar" style="width: 0%;"></div>
+				</div>
 
-	<div class="moodstatus" style="clear:both">
-		<p>Your current mood is <span class="argusmood">AM</span>.</p>
+				<ul id="playlist">
+				</ul>
+
+				event_listener (for debugging purposes): <br/>
+				<pre id="event_listener" style="height:100px;overflow:auto;"></pre>
+			</div>
+
+			<div class="moodstatus" style="clear:both">
+				<p>Your current mood is <span class="argusmood">AM</span>.</p>
+			</div>
+
 	</div>
 
 	<script type="text/javascript" src="deezer.js"></script>

@@ -1,0 +1,74 @@
+div.moodgrid {
+	max-width:600px;
+	width:480px;
+	float:left;
+	text-align: center;
+}
+
+.moodgriditem {
+	width:20%;
+	float:left;
+	margin:2%;
+	padding:2%;
+}
+
+.moodgriditem.angry {
+	background-color:#f15b29;
+}
+
+.moodgriditem.active {
+	background-color:#f69534;
+}
+
+.moodgriditem.happy {
+	background-color:#fbd240;
+}
+
+.moodgriditem.calm {
+	background-color:#c4cc3f;
+}
+
+.moodgriditem.relaxed {
+	background-color:#8dc63f;
+}
+
+.moodgriditem.quiet {
+	background-color:#539d7f;
+}
+
+.moodgriditem.sad {
+	background-color:#1c75bc;
+}
+
+.moodgriditem.upset {
+	background-color:#b07678;
+}
+
+.moodgriditem.neutral {
+	background-color:#c0c0c0;
+}
+
+.moodgriditem img {
+	width:100%;
+	height:auto;
+}
+
+#neutral {
+	opacity:0.5;
+}
+
+.moodstatus {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 24px;
+	clear:both;
+	width:100%;
+}
+
+.moodstatus p {
+	text-align: center;
+}
+
+.argusmood {
+	font-weight: 900;
+}
