@@ -9,6 +9,8 @@ function getNewPlaylist() {
             return;
         }
 
+        clearPlaylist();
+
         if (transitionMoodCode) {
             getGraceNoteTracks(transitionMoodCode, function(ids) {
                 transitionTrack = getTrackObject(ids[0], transitionArgusMood);
@@ -34,11 +36,9 @@ function getNewPlaylist() {
 }
 
 function reloadPlayer() {
-    clearPlaylist();
     getNewPlaylist();
 }
 
 function reloadMood() {
-    clearPlaylist();
     getNewPlaylist();
 }
