@@ -7,7 +7,7 @@ $(document).ready(function(){
 		console.log(evt.offsetX, $(this).width(), evt.offsetX/$(this).width());
 		DZ.player.seek((evt.offsetX/$(this).width()) * 100);
 	});
-    reloadMood()
+    reloadMood();
 });
 
 // event listener, for now we display it for debugging purposes

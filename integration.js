@@ -2,10 +2,11 @@ function getTrackObject(id, mood) {
     return {"id": id, "class": mood.toLowerCase()};
 }
 
-function getNewPlaylist(callback, differentMoodRequired) {
+function getNewPlaylist(differentMoodRequired) {
     previousMoodCode = currentMoodCode;
     getSentiment(function(transitionMoodCode, moodCode, transitionArgusMood, argusMood) {
         if (currentMoodCode == previousMoodCode && differentMoodRequired == true) {
+            ready();
             return;
         }
         clearPlaylist();
@@ -19,7 +20,7 @@ function getNewPlaylist(callback, differentMoodRequired) {
                         tracks[i] = getTrackObject(ids[i], argusMood);
                     }
                     tracks.splice(0, 0, transitionTrack);
-                    queuePlaylist(tracks, callback);
+                    queuePlaylist(tracks);
                 });
             });
         } else {
@@ -28,7 +29,7 @@ function getNewPlaylist(callback, differentMoodRequired) {
                 for (var i = 0; i < ids.length; i++) {
                     tracks[i] = getTrackObject(ids[i], argusMood);
                 }
-                queuePlaylist(tracks, callback);
+                queuePlaylist(tracks);
             });
         }
     });
@@ -37,11 +38,14 @@ function getNewPlaylist(callback, differentMoodRequired) {
 loading = false
 function reloadMood() {
     if(loading == true) {
-        console.log("Don't load when we are already loading")
         return
     }
-    getNewPlaylist(function() {
-        loading = false
-        setTimeout(function() {reloadMood()}, 2500)
-    }, (differentMoodRequired=true));
+    getNewPlaylist(differentMoodRequired=true);
+}
+
+function ready() {
+    loading = false
+    setTimeout(function() {
+        reloadMood()
+    }, 1000)
 }

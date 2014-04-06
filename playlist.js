@@ -27,13 +27,13 @@ function queueTrackById( trackId ) {
 }
 
 // Replace queueTrackById for sequantialness, much slower, but fixed order!
-function queuePlaylist(tracklist, callback){
+function queuePlaylist(tracklist){
 	var track = tracklist[0];
 	$.ajax({
 	    url: 'http://mhdapi-640468004.eu-west-1.elb.amazonaws.com/users/123/proxy?url=http://api.deezer.com/track/' + track.id,
 	    type: 'GET',
 	    data: null,
-	    success: function( data ) { 
+	    success: function( data ) {
 	    	data.class = track.class;
 			playlist.push( data )
 			if(!hasPlayed && playerLoaded){
@@ -43,9 +43,9 @@ function queuePlaylist(tracklist, callback){
 			if(tracklist.length > 1){
 				queuePlaylist(tracklist.slice(1))
 				renderPlaylist();
-			}else{
+			} else {
 				renderPlaylist();
-                if(callback != undefined) callback();
+                ready();
 			}
 		}
 	});
