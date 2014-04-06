@@ -116,9 +116,6 @@ ul {
 }
 
 li {
-}
-
-#li {
 	margin-top:10px;
 	background-color:green;
 	padding: 0px;
@@ -126,7 +123,7 @@ li {
 	background-clip:padding-box;
 }
 
-#nowplaying {
+.trackcontainer {
 	background-color:white;
 	padding-left:10px;
 }
