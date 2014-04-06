@@ -10,6 +10,11 @@ function getGraceNoteTracks (graceNoteMoodId, callback) {
 		deezid = album['TRACK'][0]['XID'][0]['VALUE']
 		return 	deezid;
 	}
+    if(graceNoteMoodId == undefined) {
+        console.log("Gracenote mood ID is NULL!!")
+        ready()
+        return
+    }
 	var moodparam = "?seed=mood_" + graceNoteMoodId.toString()
 	var fixedparams = "&client=14035968-3A7531B15EDA931973B63304828033EE&user=262144737596677836-7E07E310AB2C52F7872B8F77488F853F&select_extended=link&return_count=25"
 	moodparam = moodparam.concat(fixedparams)
