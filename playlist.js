@@ -34,7 +34,7 @@ function queuePlaylist(tracklist){
 	    type: 'GET',
 	    data: null,
 	    success: function( data ) {
-	    	if (data.id != $('#track').attr('dzid')) {
+	    	if (data.id != $('#track').attr('dzid') && data.error == null) {
 	    		data.class = track.class;
 	    		playlist.push( data )
 	    	}
