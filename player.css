@@ -152,6 +152,7 @@ li .title {
 
 #aboutLink a {
     text-decoration: none;
+    color: #EEEEEE;
 }
 
 #aboutLink a:active, #aboutLink a:visited, #aboutLink a:hover {
