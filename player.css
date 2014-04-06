@@ -141,3 +141,19 @@ li .title {
 	white-space: nowrap;
 	text-overflow:ellipsis;
 }
+
+#controllers {
+    position: relative;
+}
+
+#aboutLink {
+    position: absolute; right: 0; top: 0;
+}
+
+#aboutLink a {
+    text-decoration: none;
+}
+
+#aboutLink a:active, #aboutLink a:visited, #aboutLink a:hover {
+    color: #EEEEEE;
+}
