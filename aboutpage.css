@@ -33,7 +33,7 @@
 .aboutpageteamphotos div  	{
 	width: 120px;
 	float:left;
-	padding:2px;
+	padding-right:8px;
 	} 
 	
 .abouttext 	{
@@ -65,7 +65,7 @@ a {
 
 #back:link, #back:visited, #back:hover, #back:active {
 	color: #ccc;
-	
+	font-weight:bold;
 }
 
 a:link, a:visited, a:hover, a:active {
