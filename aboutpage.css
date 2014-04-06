@@ -37,4 +37,35 @@
 	clear:both;
 	float:left;
 	width:800px;
-	} 
+}
+
+#sublogotext {
+	padding-bottom:10px;
+	color:#fff;
+}
+
+#logocontainer {
+	margin:0px auto;
+	width:800px;
+	text-align:left;
+}
+
+#backcontainer {
+	margin:0px auto;
+	width:800px;
+	text-align:right;
+}
+
+a {
+	text-decoration:none;
+}
+
+#back:link, #back:visited, #back:hover, #back:active {
+	color: #ccc;
+	
+}
+
+a:link, a:visited, a:hover, a:active {
+	color: #32323a;
+	
+}
