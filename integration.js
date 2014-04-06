@@ -11,7 +11,7 @@ function getNewPlaylist(differentMoodRequired) {
         }
         clearPlaylist();
 
-        if (transitionMoodCode) {
+        if (transitionMoodCode && transitionMoodCode != moodCode) {
             getGraceNoteTracks(transitionMoodCode, function(ids) {
                 transitionTrack = getTrackObject(ids[0], transitionArgusMood);
                 getGraceNoteTracks(moodCode, function(ids) {
