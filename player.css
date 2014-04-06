@@ -22,7 +22,7 @@ div.music {
 	width:480px;
 	height: 420px;
 	overflow-x: hidden;
-	overflow-x: auto;
+	overflow-y: auto;
 }
 
 
