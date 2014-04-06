@@ -34,8 +34,11 @@ function queuePlaylist(tracklist){
 	    type: 'GET',
 	    data: null,
 	    success: function( data ) {
-	    	data.class = track.class;
-			playlist.push( data )
+	    	if (data.id != $('#track').attr('dzid')) {
+	    		data.class = track.class;
+	    		playlist.push( data )
+	    	}
+
 			if(!hasPlayed && playerLoaded){
 				hasPlayed = true
 				playNextTrack()
