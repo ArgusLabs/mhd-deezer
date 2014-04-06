@@ -91,7 +91,7 @@ div.progress {
 }
 
 #nowplaying #artist {
-	font-size:120%;
+	font-size:90%;
 	font-weight: bold;
 	text-transform:uppercase;
 	white-space: nowrap;
@@ -99,7 +99,7 @@ div.progress {
 }
 
 #nowplaying #track {
-	font-size:150%;
+	font-size:110%;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	font-size: 24px;
@@ -127,7 +127,7 @@ li {
 }
 
 li .artist {
-	font-size:100%;
+	font-size:80%;
 	font-weight: bold;
 	text-transform:uppercase;
 	white-space: nowrap;
@@ -135,7 +135,7 @@ li .artist {
 }
 
 li .title {
-	font-size:120%;
+	font-size:100%;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	white-space: nowrap;
