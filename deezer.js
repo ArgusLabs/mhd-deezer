@@ -7,13 +7,7 @@ $(document).ready(function(){
 		console.log(evt.offsetX, $(this).width(), evt.offsetX/$(this).width());
 		DZ.player.seek((evt.offsetX/$(this).width()) * 100);
 	});
-	reloadPlayer();
-    setTimeout(function() {
-        setInterval(function() {
-            console.log("MOOD_SERVICE: Refreshing")
-            reloadMood()
-        }, 2500);
-    }, 2500)
+    reloadMood()
 });
 
 // event listener, for now we display it for debugging purposes
