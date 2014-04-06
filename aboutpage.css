@@ -3,8 +3,11 @@
 	text-align: left;
 }
 
-.aboutcontent {
-	background-image: url('/aboutpage/introslide-musichackday.png');
+.aboutbody {
+	background-image: url('aboutpage/introslide-musichackday.png');
+	background-position: 0px 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .aboutpagecopy {
