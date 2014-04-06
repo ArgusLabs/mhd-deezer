@@ -1,0 +1,40 @@
+.aboutpage {
+	padding-left: 10px;
+	text-align: left;
+}
+
+.aboutcontent {
+	background-image: url('/aboutpage/introslide-musichackday.png');
+}
+
+.aboutpagecopy {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	margin-bottom:20px;
+}
+
+.abouttext .jobdescription 	{
+	font-size: 18px;
+	margin-bottom:10px;
+	margin-top:10px;
+	}
+	
+.empimage img 	{
+	width: 120px;
+	height:180px;
+	padding:0px;
+	margin:0px;
+	}
+	
+.aboutpageteamphotos div  	{
+	width: 120px;
+	float:left;
+	padding:2px;
+	} 
+	
+.abouttext 	{
+	clear:both;
+	float:left;
+	width:800px;
+	} 
