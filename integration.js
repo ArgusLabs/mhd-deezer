@@ -1,16 +1,44 @@
+function getTrackObject(id, mood) {
+    return {"id": id, "class": mood.toLowerCase()};
+}
+
+function getNewPlaylist() {
+    previousMoodCode = currentMoodCode;
+    getSentiment(function(transitionMoodCode, moodCode, transitionArgusMood, argusMood) {
+        if (currentMoodCode == previousMoodCode) { 
+            return;
+        }
+
+        if (transitionMoodCode) {
+            getGraceNoteTracks(transitionMoodCode, function(ids) {
+                transitionTrack = getTrackObject(ids[0], transitionArgusMood);
+                getGraceNoteTracks(moodCode, function(ids) {
+                    var tracks = new Array(ids.length);
+                    for (var i = 0; i < ids.length; i++) {
+                        tracks[i] = getTrackObject(ids[i], argusMood);
+                    }
+                    tracks.splice(0, 0, transitionTrack);
+                    queuePlaylist(tracks);
+                });
+            });
+        } else {
+            getGraceNoteTracks(moodCode, function(ids) {
+                var tracks = new Array(ids.length);
+                for (var i = 0; i < ids.length; i++) {
+                    tracks[i] = getTrackObject(ids[i], argusMood);
+                }
+                queuePlaylist(tracks);
+            });
+        }
+    });
+}
+
 function reloadPlayer() {
-	// request mood from sentiment analysis
     clearPlaylist();
-    getSentiment(getGraceNoteTracks);
+    getNewPlaylist();
 }
 
 function reloadMood() {
-    previousMoodCode = currentMoodCode
-    getSentiment(function(data) {
-        if(currentMoodCode !== previousMoodCode) {
-            console.log("MOOD_SERVICE: New mood detected, updating the player!")
-            clearPlaylist();
-            getGraceNoteTracks(currentMoodCode)
-        }
-    })
+    clearPlaylist();
+    getNewPlaylist();
 }

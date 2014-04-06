@@ -27,20 +27,21 @@ function queueTrackById( trackId ) {
 }
 
 // Replace queueTrackById for sequantialness, much slower, but fixed order!
-function queuePlaylist(idlist){
-	var trackId = idlist[0]
+function queuePlaylist(tracklist){
+	var track = tracklist[0];
 	$.ajax({
-	    url: 'http://mhdapi-640468004.eu-west-1.elb.amazonaws.com/users/123/proxy?url=http://api.deezer.com/track/' + trackId,
+	    url: 'http://mhdapi-640468004.eu-west-1.elb.amazonaws.com/users/123/proxy?url=http://api.deezer.com/track/' + track.id,
 	    type: 'GET',
 	    data: null,
 	    success: function( data ) { 
+	    	data.class = track.class;
 			playlist.push( data )
 			if(!hasPlayed && playerLoaded){
 				hasPlayed = true
 				playNextTrack()
 			}
-			if(idlist.length > 1){
-				queuePlaylist(idlist.slice(1))
+			if(tracklist.length > 1){
+				queuePlaylist(tracklist.slice(1))
 				renderPlaylist();
 			}else{
 				renderPlaylist();
@@ -60,6 +61,6 @@ function renderPlaylist() {
 	playlistElement = $( "#playlist" );
 	playlistElement.empty();
 	for (var i = 0; i < playlist.length; i++) {
-		playlistElement.append('<li><div class="trackcontainer"><div class="title" class="' + playlist[ i ][ "id" ] + '">' + playlist[ i ][ "title" ] + '</div><div class="artist">' + playlist[ i ][ "artist" ][ "name" ] + '</div></li>');
+		playlistElement.append('<li class="' + playlist[i].class + '"><div class="trackcontainer"><div class="title" class="' + playlist[ i ][ "id" ] + '">' + playlist[ i ][ "title" ] + '</div><div class="artist">' + playlist[ i ][ "artist" ][ "name" ] + '</div></li>');
 	}
 }

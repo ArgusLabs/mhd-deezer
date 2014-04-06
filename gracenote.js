@@ -1,4 +1,4 @@
-function getGraceNoteTracks (graceNoteMoodId) {
+function getGraceNoteTracks (graceNoteMoodId, callback) {
 	function fetchDeezerID(album){
 		var deezid = 0;
 
@@ -39,7 +39,7 @@ function getGraceNoteTracks (graceNoteMoodId) {
 						//queueTrackById(tmpid);
 					}
          	}
-            queuePlaylist(allids)
+            callback(allids)
   	
 
          },

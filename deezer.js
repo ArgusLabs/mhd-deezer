@@ -64,6 +64,7 @@ function limitString( str, len ) {
 
 function playNextTrack() {
 	nextTrack = popTrack();
+	$("#nowplayingcontainer").attr("class", nextTrack.class);
 	element = $( "#nowplaying" );
 	console.log(element.html());
 	element.html( '<div id="track">' + limitString( nextTrack[ "title" ], 25 ) + '</div><div id="artist">' + limitString( nextTrack[ "artist" ][ "name" ], 25 ) + '</div>' );

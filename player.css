@@ -80,7 +80,6 @@ div.progress {
 
 #nowplayingcontainer {
 	margin-top:10px;
-	background-color:green;
 	padding: 0px;
 	padding-left: 5px;
 	background-clip:padding-box;
@@ -117,7 +116,6 @@ ul {
 
 li {
 	margin-top:10px;
-	background-color:green;
 	padding: 0px;
 	padding-left: 5px;
 	background-clip:padding-box;

@@ -19,10 +19,11 @@ function getSentiment(callback) {
 			}
 
 			if(callback != undefined && typeof callback == 'function') {
+				console.log(data)
 				currentMood = data['current_argus_mood'];
 				currentMoodCode = data['current_mood_code'];
 				switchMood(currentMood);
-				callback(data['current_mood_code']);
+				callback(data['transition_mood_code'], data['current_mood_code'], data['transition_argus_mood'], data['current_argus_mood']);
 			}
 		}
 	});

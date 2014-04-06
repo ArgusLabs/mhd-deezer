@@ -26,39 +26,39 @@ div.moodgrid {
 	padding:2%;
 }
 
-.moodgriditem.angry {
+.angry {
 	background-color:#f15b29;
 }
 
-.moodgriditem.active {
+.active {
 	background-color:#f69534;
 }
 
-.moodgriditem.happy {
+.happy {
 	background-color:#fbd240;
 }
 
-.moodgriditem.calm {
+.calm {
 	background-color:#c4cc3f;
 }
 
-.moodgriditem.relaxed {
+.relaxed {
 	background-color:#8dc63f;
 }
 
-.moodgriditem.quiet {
+.quiet {
 	background-color:#539d7f;
 }
 
-.moodgriditem.sad {
+.sad {
 	background-color:#1c75bc;
 }
 
-.moodgriditem.upset {
+.upset {
 	background-color:#b07678;
 }
 
-.moodgriditem.neutral {
+.neutral {
 	background-color:#c0c0c0;
 }
 
